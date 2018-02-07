@@ -1,0 +1,127 @@
+#!/bin/bash
+
+alias cc='clear'
+alias ll='ls -lah'
+alias lr='ls -larth'
+
+alias bea='cd /c/BEA92/'
+alias bp='cd /c/BEA92/projects'
+
+### Git                        ######
+alias grv='git remote -v'
+alias grso='git remote show origin'
+alias gcl='git clone'
+
+alias gaa='git add --all'
+alias gu='git add -u'
+
+alias gc='git commit'
+alias gca='git commit --amend'
+alias gcaa='git commit --amend --author "Barry Evans <barryevans80@gmail.com>"'
+alias gcad='GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"'
+alias grb='git rebase'
+alias grbi='git rebase -i'
+alias grb5='git rebase -i HEAD~5'
+
+alias gcp='git cherry-pick'
+alias gcpc='git cherry-pick --continue'
+alias gcpa='git cherry-pick --abort'
+
+
+alias gb='git branch'
+alias gba='git branch -a'
+
+alias gs='git status'
+alias gf='git fetch -t --prune'
+alias gd='git diff'
+
+alias gfp='git fetch -t --prune;git pull --no-commit --rebase'
+
+alias gc='git checkout'
+alias gcm='git checkout master'
+alias gcd='git checkout develop'
+alias gct='git checkout --track'
+alias gcb='git checkout -b'
+
+alias gl='git log'
+alias glo='git log --oneline --all --decorate'
+alias glg='git log --graph --oneline --all --decorate'
+alias glgt='git log --graph --oneline --all --decorate -n 10'
+alias glp='git log --pretty=format:"%C(yellow)%h|%Cred%ad|%Creset%an|%Cgreen%d %Creset%s" --date=short'
+alias glpd='git log --pretty=format:"%C(yellow)%h|%Cred%ad|%Creset%an|%Cgreen%d %Creset%s" --date=short --relative-date'
+
+alias gst='git stash'
+alias gsp='git stash pop'
+alias gsa='git stash apply'
+alias gss='git stash show'
+alias gsl='git stash list'
+alias gspp='git stash;git pull;git stash pop;'
+
+alias grh='git reset --hard'
+
+alias grm='git rebase master'
+alias grmi='git rebase master -i'
+alias grom='git rebase origin/master'
+alias gromi='git rebase origin/master -i'
+
+
+alias grd='git rebase develop'
+alias grdi='git rebase develop -i'
+alias grod='git rebase origin/develop'
+alias grodi='git rebase origin/develop -i'
+
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
+
+alias gpl='git pull'
+alias gup='git pull --no-commit --rebase'
+alias gupm='git pull --no-commit --rebase origin master'
+alias gpu='git push'
+alias gpf='git push --force'
+alias gpft='git push --tags --force'
+### Git ::::::::::::::          ######
+
+
+### MVN ::::::::::::::          ######
+alias mc='mvn clean'
+alias mct='mvn clean test'
+alias mci='mvn clean install'
+alias mcis='mvn clean install -DskipTests'
+alias mcp='mvn clean package'
+alias mcps='mvn clean package -DskipTests'
+### MVN ::::::::::::::          ######
+
+
+### Node/npm                         ######
+alias npmi='npm --loglevel info'
+alias npmv='npm --loglevel verbose'
+alias nin='npm install'
+### Node/npm ::::::::::::::          ######
+
+alias ps='powershell'
+
+
+
+###### Bash functions ######
+sq2() {
+	squash 2
+}
+
+sq() {
+	squash $1
+}
+
+squash() {
+  git rebase -i HEAD~$1
+}
+
+
+gcdp() {
+	git checkout develop;
+	gup
+}
+
+gcmp() {
+	git checkout master;
+	gup
+}
