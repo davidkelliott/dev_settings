@@ -17,7 +17,7 @@ alias gu='git add -u'
 
 alias gc='git commit'
 alias gca='git commit --amend'
-alias gcaa='git commit --amend --author "Barry Evans <barryevans80@gmail.com>"'
+alias gcaa='git commit --amend --author "David Elliott <david.elliott101@gmail.com>"'
 alias gcad='GIT_COMMITTER_DATE="`date`" git commit --amend --date "`date`"'
 alias grb='git rebase'
 alias grbi='git rebase -i'
