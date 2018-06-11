@@ -7,3 +7,8 @@ export CATALINA_HOME=~/dev_tools/apache-tomee-webprofile-7.0.2
 export JAVA_HOME=`/usr/libexec/java_home`
 export JRE_HOME=$JAVA_HOME/jre
 . ~/git/dev_settings/bash/git-completion.bash
+set -o vi
+if command -v pyenv 1>/dev/null 2>&1; then
+	  eval "$(pyenv init -)"
+fi
+
