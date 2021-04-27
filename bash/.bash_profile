@@ -19,6 +19,15 @@ ec2-ips () {
   aws ec2 describe-instances --filter Name=tag:owner,Values=$1 --query "Reservations[*].Instances[*].[Tags[?Key=='Name'].Value|[0],PrivateIpAddress,State.Name]" --output table --profile $2
 }
 
+nb () {
+updatem || update
+git checkout -b $1
+}
+
+push () {
+  git push -u origin $(git branch --show-current --no-column)
+}
+
 alias pcl=/usr/local/bin/git-pre-commit-lint.sh
 alias please='sudo $(history -p !!)'
 alias update='git checkout master && git pull'
