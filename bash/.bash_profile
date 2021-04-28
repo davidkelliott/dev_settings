@@ -20,8 +20,7 @@ ec2-ips () {
 }
 
 nb () {
-updatem || update
-git checkout -b $1
+  ((git checkout main && git pull) || (git checkout master && git pull)) && git checkout -b $1
 }
 
 push () {
