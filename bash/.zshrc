@@ -22,6 +22,18 @@ prompt='${MAGENTA}%n${WHITE}:%~/ ${CYAN}[%?] ${GREEN}${vcs_info_msg_0_}${WHITE}$
 
 export GPG_TTY=$(tty)
 
+ec2-ips () {
+  aws ec2 describe-instances --filter Name=tag:owner,Values=$1 --query "Reservations[*].Instances[*].[Tags[?Key=='Name'].Value|[0],PrivateIpAddress,State.Name]" --output table --profile $2
+}
+
+nb () {
+  ((git checkout main && git pull) || (git checkout master && git pull)) && git checkout -b $1
+}
+
+push () {
+  git push -u origin $(git branch --show-current --no-column)
+}
+
 alias please='sudo $(history -p !!)'
 alias update='git checkout master && git pull'
 alias updatem='git checkout main && git pull'
