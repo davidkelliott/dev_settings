@@ -19,3 +19,5 @@ eval RESET='%{$reset_color%}'
 NEWLINE=$'\n'
 # Config for the prompt. PS1 synonym.
 prompt='${MAGENTA}%n${WHITE}:%~/ ${CYAN}[%?] ${GREEN}${vcs_info_msg_0_}${WHITE}$NEWLINE$'
+
+export GPG_TTY=$(tty)
