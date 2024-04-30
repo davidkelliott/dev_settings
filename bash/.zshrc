@@ -21,3 +21,9 @@ NEWLINE=$'\n'
 prompt='${MAGENTA}%n${WHITE}:%~/ ${CYAN}[%?] ${GREEN}${vcs_info_msg_0_}${WHITE}$NEWLINE$'
 
 export GPG_TTY=$(tty)
+
+alias please='sudo $(history -p !!)'
+alias update='git checkout master && git pull'
+alias updatem='git checkout main && git pull'
+alias branches='git branch --sort=-committerdate | head'
+alias glog='git log --oneline --graph -n 10'
